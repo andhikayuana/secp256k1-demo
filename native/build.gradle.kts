@@ -1,5 +1,7 @@
+import com.android.build.gradle.internal.cxx.configure.gradleLocalProperties
 import org.gradle.internal.os.OperatingSystem
 
+val localProperties = gradleLocalProperties(rootDir, providers)
 val currentOs = OperatingSystem.current()
 val bash = "bash"
 
@@ -46,10 +48,7 @@ fun creatingBuildSecp256k1Android(arch: String) = tasks.creating(Exec::class) {
     }
     environment("TOOLCHAIN", toolchain)
     environment("ARCH", arch)
-    environment("ANDROID_NDK",
-    file("../local.properties").bufferedReader().useLines { lines ->
-        lines.first { it.startsWith("sdk.dir=") }.substringAfter("=") + "/ndk/25.1.8937393"
-    })
+    environment("ANDROID_NDK", "${localProperties.getProperty("sdk.dir")}/ndk/25.1.8937393")
     commandLine(bash, "build-android.sh")
 }
 
