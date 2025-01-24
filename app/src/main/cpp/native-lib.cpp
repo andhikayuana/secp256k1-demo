@@ -28,6 +28,7 @@ Java_id_yuana_secp256k1_demo_MainActivity_stringFromJNI(
     secp256k1_context* ctx = secp256k1_context_create(SECP256K1_CONTEXT_NONE);
 
 
+    //TODO TESTING
 
 
     return env->NewStringUTF(hello.c_str());
