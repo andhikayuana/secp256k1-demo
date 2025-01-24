@@ -46,7 +46,6 @@ fun creatingBuildSecp256k1Android(arch: String) = tasks.creating(Exec::class) {
     }
     environment("TOOLCHAIN", toolchain)
     environment("ARCH", arch)
-//    environment("ANDROID_NDK", (project(":app").extensions["android"] as com.android.build.gradle.LibraryExtension).ndkDirectory)
     environment("ANDROID_NDK",
     file("../local.properties").bufferedReader().useLines { lines ->
         lines.first { it.startsWith("sdk.dir=") }.substringAfter("=") + "/ndk/25.1.8937393"
