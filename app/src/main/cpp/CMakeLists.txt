@@ -30,7 +30,7 @@ add_library(${CMAKE_PROJECT_NAME} SHARED
 )
 
 target_include_directories(${CMAKE_PROJECT_NAME} PUBLIC
-        ${CMAKE_CURRENT_LIST_DIR}/../../../../native/secp256k1
+        ${CMAKE_CURRENT_LIST_DIR}/../../../../native/secp256k1/include
 )
 
 # Specifies libraries CMake should link to your target library. You

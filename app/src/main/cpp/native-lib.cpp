@@ -1,8 +1,8 @@
 #include <jni.h>
 #include <string>
 #include <assert.h>
-#include "include/secp256k1.h"
-#include "include/secp256k1_ecdh.h"
+#include "secp256k1.h"
+#include "secp256k1_ecdh.h"
 
 extern "C" JNIEXPORT jstring JNICALL
 Java_id_yuana_secp256k1_demo_MainActivity_stringFromJNI(
