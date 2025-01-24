@@ -20,4 +20,4 @@ dependencyResolutionManagement {
 }
 
 rootProject.name = "secp256k1 demo"
-include(":app")
+include(":app", ":native")
